@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Machine Learning Q&amp;A - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{background:#fff;color:#333;display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{background-color:#eaffea;color:#55a532}.hljs-deletion{background-color:#ffecec;color:#bd2c00}.hljs-link{text-decoration:underline}.markdown-body{word-wrap:break-word;font-size:16px;line-height:1.5}.markdown-body:after,.markdown-body:before{content:"";display:table}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-bottom:16px;margin-top:0}.markdown-body hr{background-color:#e7e7e7;border:0;height:.25em;margin:24px 0;padding:0}.markdown-body blockquote{border-left:.25em solid #ddd;color:#777;font-size:16px;padding:0 1em}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{background-color:#fcfcfc;border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb;color:#555;display:inline-block;font-size:11px;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{border-bottom:1px solid #eee;padding-bottom:.3em}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{color:#777;font-size:.85em}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{list-style-type:none;padding:0}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-bottom:0;margin-top:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{font-size:1em;font-style:italic;font-weight:700;margin-top:16px;padding:0}.markdown-body dl dd{margin-bottom:16px;padding:0 16px}.markdown-body table{display:block;overflow:auto;width:100%;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{border:1px solid #ddd;padding:6px 13px}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{background-color:#fff;box-sizing:initial;max-width:100%}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{background-color:initial;max-width:none;vertical-align:text-top}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{border:1px solid #ddd;display:block;float:left;margin:13px 0 0;overflow:hidden;padding:7px;width:auto}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{clear:both;color:#333;display:block;padding:5px 0 0}.markdown-body span.align-center{clear:both;display:block;overflow:hidden}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{clear:both;display:block;overflow:hidden}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{background-color:#0000000a;border-radius:3px;font-size:85%;margin:0;padding:.2em 0}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{content:"\00a0";letter-spacing:-.2em}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{background:#0000;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{background-color:#f7f7f7;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown-body pre code,.markdown-body pre tt{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{background:#fff;border:0;padding:10px 8px 9px;text-align:right}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{background:#f8f8f8;border-top:0;font-weight:700}.news .alert .markdown-body blockquote{border:0;padding:0 0 0 40px}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{cursor:default!important;float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle}.markdown-body{max-width:758px;overflow:visible!important;padding-bottom:40px;padding-top:40px;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{border-right:3px solid #6ce26c!important;box-sizing:initial;color:#afafaf!important;cursor:default;display:inline-block;min-width:20px;padding:0 8px 0 0;position:relative;text-align:right;z-index:4}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-bottom:none;border-left:none;border-top:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-collapse:inherit!important;border-spacing:0}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{margin-bottom:unset;overflow:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p:last-child{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{background-color:inherit;border-radius:0;overflow:visible;text-align:center;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{height:100%;max-width:100%}.markdown-body pre>code.wrap{word-wrap:break-word;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap}.markdown-body .alert>p:last-child,.markdown-body .alert>ul:last-child{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{background-color:#000;background-position:50%;background-repeat:no-repeat;background-size:contain;cursor:pointer;display:table;overflow:hidden;text-align:center}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{object-fit:contain;width:100%;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{height:100%;left:0;position:absolute;top:0;width:100%}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{color:#fff;height:auto;left:50%;opacity:.3;position:absolute;top:50%;transform:translate(-50%,-50%);transition:opacity .2s;width:auto;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.figma{display:table;padding-bottom:56.25%;position:relative;width:100%}.figma iframe{border:1px solid #eee;bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.markmap-container{height:300px}.markmap-container>svg{height:100%;width:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{color:#777;margin:25px auto -25px;max-width:760px;position:relative;z-index:2}.toc .invisable-node{list-style-type:none}.ui-toc{bottom:20px;position:fixed;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{border-bottom-left-radius:0;border-top-left-radius:0;height:40px;padding:10px 4px}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{color:#fff;opacity:1;transition:opacity .2s}.ui-toc-label:focus{background-color:#ccc;color:#000;opacity:.3}.ui-toc-label:hover{background-color:#ccc;opacity:1;transition:opacity .2s}.ui-toc-dropdown{margin-bottom:20px;margin-top:20px;max-height:70vh;max-width:45vw;overflow:auto;padding-left:10px;padding-right:10px;text-align:inherit;width:25vw}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{letter-spacing:.0029em;padding-right:0}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{color:#767676;display:block;font-size:13px;font-weight:500;padding:4px 20px}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{background-color:initial;border-left:1px solid #000;color:#000;padding-left:19px;text-decoration:none}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{border-left:none;border-right:1px solid #000;padding-right:19px}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{background-color:initial;border-left:2px solid #000;color:#000;font-weight:700;padding-left:18px}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{border-left:none;border-right:2px solid #000;padding-right:18px}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:30px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:40px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{font-weight:500;padding-left:28px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{font-weight:500;padding-left:38px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{max-height:70vh;max-width:15vw;overflow:auto;position:fixed;top:0}.back-to-top,.expand-toggle,.go-to-bottom{color:#999;display:block;font-size:12px;font-weight:500;margin-left:10px;margin-top:10px;padding:4px 10px}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{background-position:50%;background-repeat:no-repeat;background-size:cover;border-radius:50%;display:block;height:20px;margin-bottom:2px;margin-right:5px;margin-top:2px;width:20px}.ui-user-icon.small{display:inline-block;height:18px;margin:0 0 .2em;vertical-align:middle;width:18px}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;padding-left:22px;text-decoration:none}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}.inline-spoiler-section{cursor:pointer}.inline-spoiler-section .spoiler-text{background-color:#333;border-radius:2px}.inline-spoiler-section .spoiler-text>*{opacity:0}.inline-spoiler-section .spoiler-img{filter:blur(10px)}.inline-spoiler-section.raw{background-color:#333;border-radius:2px}.inline-spoiler-section.raw>*{opacity:0}.inline-spoiler-section.unveil{cursor:auto}.inline-spoiler-section.unveil .spoiler-text{background-color:#3333331a}.inline-spoiler-section.unveil .spoiler-text>*{opacity:1}.inline-spoiler-section.unveil .spoiler-img{filter:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{color:#222;position:relative;z-index:1}.markdown-body.slides:before{background-color:currentColor;bottom:0;box-shadow:0 0 0 50vw;content:"";display:block;left:0;position:absolute;right:0;top:0;z-index:-1}.markdown-body.slides section[data-markdown]{background-color:#fff;margin-bottom:1.5em;position:relative;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{left:1em;max-height:100%;overflow:hidden;position:absolute;right:1em;top:50%;transform:translateY(-50%)}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{border:3px solid #777;content:"";height:1.5em;position:absolute;right:1em;top:-1.5em}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}svg{text-shadow:none}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-inner comment-enabled" data-hard-breaks="true"><p><span class="toc"><ul>
+<li><a href="#Machine-Learning-QampA" title="Machine Learning Q&amp;A">Machine Learning Q&amp;A</a><ul>
+<li><a href="#Q1-how-much-python-do-i-need-to-learn-to-do-data-science-" title="Q1. how much python do i need to learn to do data science ?">Q1. how much python do i need to learn to do data science ?</a></li>
+<li><a href="#Q2-what-can-variational-autoencoder-do-" title="Q2. what can variational autoencoder do ?">Q2. what can variational autoencoder do ?</a></li>
+<li><a href="#Q3-how-to-do-anomaly-detection-with-variational-autoencoder" title="Q3. how to do anomaly detection with variational autoencoder?">Q3. how to do anomaly detection with variational autoencoder?</a></li>
+<li><a href="#Q4-what-is-latent-space-in-deep-learning" title="Q4: what is latent space in deep learning?">Q4: what is latent space in deep learning?</a></li>
+<li><a href="#Q5-what-is-WGAN" title="Q5. what is WGAN?">Q5. what is WGAN?</a></li>
+<li><a href="#Q6-what-are-Wasserstein-distance-Jensen-Shannon-divergence-and-Kullback-Leibler-divergence" title="Q6. what are Wasserstein distance, Jensen-Shannon divergence, and Kullback-Leibler divergence?">Q6. what are Wasserstein distance, Jensen-Shannon divergence, and Kullback-Leibler divergence?</a></li>
+<li><a href="#Q7-how-is-Wasserstein-distance-used-in-WGAN-" title="Q7. how is Wasserstein distance used in WGAN ?">Q7. how is Wasserstein distance used in WGAN ?</a></li>
+<li><a href="#Q8-what-does-Varational-autoencoder-do-" title="Q8. what does Varational autoencoder do ?">Q8. what does Varational autoencoder do ?</a></li>
+<li><a href="#Q9-what-is-latent-vector-in-deep-learning" title="Q9. what is latent vector in deep learning?">Q9. what is latent vector in deep learning?</a></li>
+<li><a href="#Q10-can-i-use-scikit-learn-for-deep-learning-or-do-i-have-to-use-pytorch-and-tensorflow-" title="Q10. can i use scikit learn for deep learning? or do i have to use pytorch and tensorflow ?">Q10. can i use scikit learn for deep learning? or do i have to use pytorch and tensorflow ?</a></li>
+<li><a href="#Q11-How-to-do-custom-dataset-in-tensorflow" title="Q11. How to do custom dataset in tensorflow?">Q11. How to do custom dataset in tensorflow?</a></li>
+<li><a href="#Q12-how-to-detect-credit-card-fraud-using-deep-learning" title="Q12. how to detect credit card fraud using deep learning?">Q12. how to detect credit card fraud using deep learning?</a></li>
+<li><a href="#Q14-How-do-i-start-a-deep-learning-project-" title="Q14. How do i start a deep learning project ?">Q14. How do i start a deep learning project ?</a></li>
+<li><a href="#Q15-What-is-the-self-learning-roadmap-to-data-scientist" title="Q15. What is the self learning roadmap to data scientist?">Q15. What is the self learning roadmap to data scientist?</a></li>
+<li><a href="#Q16-How-to-write-my-own-keras-training-method" title="Q16. How to write my own keras training method?">Q16. How to write my own keras training method?</a></li>
+<li><a href="#Q17-How-to-learn-GAN" title="Q17. How to learn GAN?">Q17. How to learn GAN?</a></li>
+<li><a href="#Q18-Example-of-a-GAN-model" title="Q18. Example of a GAN model">Q18. Example of a GAN model</a></li>
+<li><a href="#Q19-What-is-latent_dim-in-deep-learning" title="Q19. What is latent_dim in deep learning?">Q19. What is latent_dim in deep learning?</a></li>
+<li><a href="#Q20-What-are-the-topics-to-learn-in-order-in-machine-learning" title="Q20. What are the topics to learn in order in machine learning?">Q20. What are the topics to learn in order in machine learning?</a></li>
+<li><a href="#Q21-How-is-deep-learning-used-in-anamoly-detection" title="Q21. How is deep learning used in anamoly detection?">Q21. How is deep learning used in anamoly detection?</a></li>
+<li><a href="#Q22-How-to-build-data-pipeline-in-tensorflow" title="Q22. How to build data pipeline in tensorflow?">Q22. How to build data pipeline in tensorflow?</a></li>
+</ul>
+</li>
+</ul>
+</span></p><h1 id="Machine-Learning-QampA" data-id="Machine-Learning-QampA"><a class="anchor hidden-xs" href="#Machine-Learning-QampA" title="Machine-Learning-QampA"><span class="octicon octicon-link"></span></a><span>Machine Learning Q&amp;A</span></h1><h4 id="Q1-how-much-python-do-i-need-to-learn-to-do-data-science-" data-id="Q1-how-much-python-do-i-need-to-learn-to-do-data-science-"><a class="anchor hidden-xs" href="#Q1-how-much-python-do-i-need-to-learn-to-do-data-science-" title="Q1-how-much-python-do-i-need-to-learn-to-do-data-science-"><span class="octicon octicon-link"></span></a><span>Q1. how much python do i need to learn to do data science ?</span></h4><p><span>A1:</span><br>
+<span>To do data science with Python, you will need to have a good understanding of the basics of Python programming language, including data types, control structures, functions, and object-oriented programming. Additionally, you should be familiar with the following Python libraries: NumPy, Pandas, Matplotlib, and Scikit-learn. These libraries are essential for data manipulation, visualization, and machine learning tasks. Depending on your specific data science tasks, you may also need to learn other libraries, such as TensorFlow or PyTorch for deep learning.</span></p><hr><h4 id="Q2-what-can-variational-autoencoder-do-" data-id="Q2-what-can-variational-autoencoder-do-"><a class="anchor hidden-xs" href="#Q2-what-can-variational-autoencoder-do-" title="Q2-what-can-variational-autoencoder-do-"><span class="octicon octicon-link"></span></a><span>Q2. what can variational autoencoder do ?</span></h4><p><span>A2:</span><br>
+<span>Variational Autoencoder (VAE) is a type of generative model that can be used for various applications, including image and text generation, data compression, and data denoising. VAEs use deep learning techniques to learn a low-dimensional representation of high-dimensional data. They are similar to traditional autoencoders, but they also incorporate a probabilistic approach to generate new data.</span></p><p><span>The key benefit of VAEs is their ability to generate new data that is similar to the original data, but not identical. This is useful for tasks such as image generation, where the generated images can be used for data augmentation or synthetic data generation. VAEs can also be used for data compression and denoising, where they can learn to represent data in a more compact form or remove noise from the original data. Finally, VAEs can be used for unsupervised learning tasks, such as clustering or anomaly detection, where they can learn a representation of the data without any explicit labels or supervision.</span></p><hr><h4 id="Q3-how-to-do-anomaly-detection-with-variational-autoencoder" data-id="Q3-how-to-do-anomaly-detection-with-variational-autoencoder"><a class="anchor hidden-xs" href="#Q3-how-to-do-anomaly-detection-with-variational-autoencoder" title="Q3-how-to-do-anomaly-detection-with-variational-autoencoder"><span class="octicon octicon-link"></span></a><span>Q3. how to do anomaly detection with variational autoencoder?</span></h4><p><span>A3:</span><br>
+<span>Anomaly detection using Variational Autoencoder (VAE) involves training the VAE on normal data samples and then using the learned model to detect anomalies in new data points. Here’s how it works:</span></p><ol>
+<li>
+<p><span>Train the VAE: Train the VAE on a large dataset of normal data points. The VAE should learn to encode the normal data points into a low-dimensional space and then decode them back to their original form. The VAE is trained to minimize the reconstruction error between the original and reconstructed data points.</span></p>
+</li>
+<li>
+<p><span>Compute Reconstruction Error: After training, use the VAE to encode new data points into the low-dimensional space and then decode them back to their original form. Compute the reconstruction error, which is the difference between the original and reconstructed data points.</span></p>
+</li>
+<li>
+<p><span>Threshold the Reconstruction Error: Compute a threshold value for the reconstruction error. This threshold can be chosen based on the distribution of reconstruction errors on the normal data points.</span></p>
+</li>
+<li>
+<p><span>Identify Anomalies: If the reconstruction error for a new data point exceeds the threshold value, then it is likely to be an anomaly.</span></p>
+</li>
+<li>
+<p><span>Refine the Model: Over time, retrain the VAE on new normal data points to refine the anomaly detection model.</span></p>
+</li>
+</ol><p><span>Overall, anomaly detection using VAE involves training a VAE on normal data, using it to reconstruct new data points, and then identifying anomalies based on the reconstruction error. By encoding data into a lower-dimensional space, VAE can capture the underlying patterns and relationships in the data, making it a useful tool for anomaly detection.</span></p><hr><h4 id="Q4-what-is-latent-space-in-deep-learning" data-id="Q4-what-is-latent-space-in-deep-learning"><a class="anchor hidden-xs" href="#Q4-what-is-latent-space-in-deep-learning" title="Q4-what-is-latent-space-in-deep-learning"><span class="octicon octicon-link"></span></a><span>Q4: what is latent space in deep learning?</span></h4><p><span>A4:</span><br>
+<span>In deep learning, the latent space refers to the space of the hidden layer activations that occur between the input layer and the output layer. It can be thought of as a compressed representation of the input data that captures the most salient features and patterns of the input data. The latent space is also referred to as the feature space or encoding space.</span></p><p><span>The process of mapping input data to the latent space is called encoding, and the process of mapping latent space back to the input data is called decoding. This process is typically achieved using an encoder-decoder architecture, such as an autoencoder or a Variational Autoencoder (VAE). The encoder learns to map input data to the latent space, while the decoder learns to map the latent space back to the input data.</span></p><p><span>The latent space is often used for tasks such as data compression, data generation, and data manipulation. By modifying the values in the latent space, one can generate new data points that have similar characteristics to the original data. Latent space manipulation can also be used for data augmentation, image editing, and style transfer. The latent space can also be used for unsupervised learning tasks such as clustering, anomaly detection, and dimensionality reduction.</span></p><hr><h4 id="Q5-what-is-WGAN" data-id="Q5-what-is-WGAN"><a class="anchor hidden-xs" href="#Q5-what-is-WGAN" title="Q5-what-is-WGAN"><span class="octicon octicon-link"></span></a><span>Q5. what is WGAN?</span></h4><p><span>A5:</span><br>
+<span>WGAN stands for Wasserstein GAN, which is a variant of Generative Adversarial Networks (GANs) used for generating realistic and high-quality images. WGAN was proposed by Martin Arjovsky, Soumith Chintala, and Léon Bottou in 2017.</span></p><p><span>The key difference between WGAN and traditional GANs is the loss function used to train the generator and discriminator. In traditional GANs, the discriminator is trained to output a binary value indicating whether the input image is real or fake, while the generator is trained to fool the discriminator into classifying its output as real. However, this can lead to problems such as mode collapse, where the generator learns to generate only a few distinct types of images.</span></p><p><span>In WGAN, the discriminator is trained to output a scalar value indicating the degree of realism of the input image, rather than a binary value. The generator is then trained to minimize the difference between the distribution of the generated images and the distribution of the real images. This is achieved using the Wasserstein distance, which is a measure of the distance between two probability distributions. The Wasserstein distance is useful because it is a more stable and meaningful measure of distance than other distance metrics like the Jensen-Shannon divergence or the Kullback-Leibler divergence.</span></p><p><span>By using the Wasserstein distance, WGAN can generate high-quality images with greater stability and fewer artifacts than traditional GANs. WGAN has been shown to be effective for a wide range of image generation tasks, including image synthesis, style transfer, and super-resolution.</span></p><hr><h4 id="Q6-what-are-Wasserstein-distance-Jensen-Shannon-divergence-and-Kullback-Leibler-divergence" data-id="Q6-what-are-Wasserstein-distance-Jensen-Shannon-divergence-and-Kullback-Leibler-divergence"><a class="anchor hidden-xs" href="#Q6-what-are-Wasserstein-distance-Jensen-Shannon-divergence-and-Kullback-Leibler-divergence" title="Q6-what-are-Wasserstein-distance-Jensen-Shannon-divergence-and-Kullback-Leibler-divergence"><span class="octicon octicon-link"></span></a><span>Q6. what are Wasserstein distance, Jensen-Shannon divergence, and Kullback-Leibler divergence?</span></h4><p><span>A6:</span><br>
+<span>Wasserstein distance, Jensen-Shannon divergence, and Kullback-Leibler divergence are all measures of distance between two probability distributions. Here’s a brief description of each:</span></p><ul>
+<li><span>Wasserstein distance: Also known as the Earth Mover’s Distance, it measures the minimum amount of work required to transform one probability distribution into another. In the context of GANs, the Wasserstein distance is used to measure the difference between the distribution of the generated samples and the distribution of the real samples. The Wasserstein distance has some useful properties, such as being continuous and differentiable almost everywhere, which make it a good choice for training GANs.</span></li>
+<li><span>Jensen-Shannon divergence: It measures the similarity between two probability distributions. The Jensen-Shannon divergence is defined as the average of the Kullback-Leibler divergences between the two distributions and the average of the Kullback-Leibler divergences between each distribution and their mean. The Jensen-Shannon divergence has some nice mathematical properties, such as being symmetric and bounded between 0 and 1.</span></li>
+<li><span>Kullback-Leibler divergence: It measures the difference between two probability distributions. Specifically, it measures how much information is lost when using one distribution to approximate the other. The Kullback-Leibler divergence is not symmetric, meaning that the divergence between distribution A and distribution B is not necessarily the same as the divergence between distribution B and distribution A. The Kullback-Leibler divergence is often used in machine learning for tasks such as clustering, classification, and model selection.</span></li>
+</ul><p><span>In summary, Wasserstein distance measures the minimum work required to transform one probability distribution into another, Jensen-Shannon divergence measures the similarity between two distributions, and Kullback-Leibler divergence measures the difference between two distributions. These measures are used in various machine learning applications to compare the distributions of data and to optimize models.</span></p><hr><h4 id="Q7-how-is-Wasserstein-distance-used-in-WGAN-" data-id="Q7-how-is-Wasserstein-distance-used-in-WGAN-"><a class="anchor hidden-xs" href="#Q7-how-is-Wasserstein-distance-used-in-WGAN-" title="Q7-how-is-Wasserstein-distance-used-in-WGAN-"><span class="octicon octicon-link"></span></a><span>Q7. how is Wasserstein distance used in WGAN ?</span></h4><p><span>A7:</span><br>
+<span>In WGAN (Wasserstein GAN), the Wasserstein distance is used as a loss function to train the generator and discriminator networks. Specifically, the generator is trained to minimize the Wasserstein distance between the distribution of the generated samples and the distribution of the real samples, while the discriminator is trained to estimate the Wasserstein distance between the two distributions.</span></p><p><span>The standard formulation of GANs uses the binary cross-entropy loss to train the discriminator to distinguish between real and generated samples. However, this loss function can lead to unstable training and mode collapse, where the generator produces only a limited range of samples. The Wasserstein distance is a more stable and meaningful measure of distance between probability distributions and has been shown to produce better results in GANs.</span></p><p><span>In WGAN, the discriminator is not a classifier, but rather an approximator of the Wasserstein distance. This means that the output of the discriminator is a real number indicating the degree of realism of the input sample. The Wasserstein distance is then calculated as the difference between the mean of the discriminator’s outputs on real samples and the mean of the discriminator’s outputs on generated samples. This difference is then used as the loss for both the discriminator and the generator.</span></p><p><span>Minimizing the Wasserstein distance has several advantages over traditional GAN training. It provides a continuous and meaningful measure of the difference between the real and generated samples, which can help avoid mode collapse and improve stability. Additionally, the gradient of the Wasserstein distance can be estimated more reliably, making it easier to train deep neural networks in high-dimensional spaces.</span></p><hr><h4 id="Q8-what-does-Varational-autoencoder-do-" data-id="Q8-what-does-Varational-autoencoder-do-"><a class="anchor hidden-xs" href="#Q8-what-does-Varational-autoencoder-do-" title="Q8-what-does-Varational-autoencoder-do-"><span class="octicon octicon-link"></span></a><span>Q8. what does Varational autoencoder do ?</span></h4><p><span>A8:</span><br>
+<span>A variational autoencoder (VAE) is a type of neural network that is used for unsupervised learning of latent representations of data. It can be used for tasks such as image and audio generation, data compression, and anomaly detection.</span></p><p><span>The VAE consists of an encoder network that maps input data to a distribution in a latent space, and a decoder network that maps the latent representation back to the original input space. The encoder and decoder networks are trained together to optimize a reconstruction loss, which measures how well the decoded output matches the original input.</span></p><p><span>The key innovation of the VAE is the use of a probabilistic latent representation, which allows the model to generate new samples that are similar to the training data, but not identical to any specific example. This is achieved by sampling from the learned latent distribution during the decoding process.</span></p><p><span>The VAE also incorporates a regularization term into the loss function that encourages the learned latent distribution to be close to a standard normal distribution. This encourages the latent representation to be disentangled, meaning that different dimensions of the latent space capture different factors of variation in the data.</span></p><p><span>Overall, the VAE provides a powerful framework for learning useful representations of data, and can be applied to a wide range of applications in unsupervised learning, generative modeling, and data compression.</span></p><hr><h4 id="Q9-what-is-latent-vector-in-deep-learning" data-id="Q9-what-is-latent-vector-in-deep-learning"><a class="anchor hidden-xs" href="#Q9-what-is-latent-vector-in-deep-learning" title="Q9-what-is-latent-vector-in-deep-learning"><span class="octicon octicon-link"></span></a><span>Q9. what is latent vector in deep learning?</span></h4><p><span>A9:</span><br>
+<span>In deep learning, a latent vector, also known as an embedding or a code, is a low-dimensional representation of a high-dimensional data point that has been learned by a neural network. The term “latent” refers to the fact that the vector is not directly observed in the training data, but rather is inferred by the network through a process of learning.</span></p><p><span>Latent vectors are commonly used in applications such as image recognition, natural language processing, and generative modeling. In image recognition, for example, a neural network might learn to map each input image to a corresponding latent vector that captures important features of the image. These latent vectors can then be used for tasks such as clustering, classification, or visualization.</span></p><p><span>Latent vectors are often learned through an encoder-decoder architecture, such as an autoencoder or a variational autoencoder (VAE). The encoder network maps the input data to a latent vector, and the decoder network maps the latent vector back to the original input space. During training, the network is optimized to minimize a reconstruction loss that measures how well the decoded output matches the original input.</span></p><p><span>Overall, latent vectors provide a powerful tool for learning useful representations of data that can be used for a wide range of applications in deep learning.</span></p><hr><h4 id="Q10-can-i-use-scikit-learn-for-deep-learning-or-do-i-have-to-use-pytorch-and-tensorflow-" data-id="Q10-can-i-use-scikit-learn-for-deep-learning-or-do-i-have-to-use-pytorch-and-tensorflow-"><a class="anchor hidden-xs" href="#Q10-can-i-use-scikit-learn-for-deep-learning-or-do-i-have-to-use-pytorch-and-tensorflow-" title="Q10-can-i-use-scikit-learn-for-deep-learning-or-do-i-have-to-use-pytorch-and-tensorflow-"><span class="octicon octicon-link"></span></a><span>Q10. can i use scikit learn for deep learning? or do i have to use pytorch and tensorflow ?</span></h4><p><span>A10:</span><br>
+<span>Scikit-learn is a popular machine learning library in Python, but it is not specifically designed for deep learning. Scikit-learn is focused on traditional machine learning algorithms, such as decision trees, support vector machines, and random forests, and is optimized for speed and ease of use for small to medium-sized datasets.</span></p><p><span>To perform deep learning, it is generally recommended to use dedicated deep learning libraries such as TensorFlow, Keras, or PyTorch, as these libraries provide specialized tools and optimizations for training deep neural networks on large datasets. These libraries also support features such as GPU acceleration, automatic differentiation, and distributed training that can significantly speed up the training process.</span></p><p><span>That being said, scikit-learn can still be useful for some pre-processing tasks such as feature extraction and normalization, and it can also be used to build models that can be used as part of a larger deep learning pipeline. Additionally, some of the scikit-learn algorithms can be adapted to work with deep learning architectures. For example, the Support Vector Machines (SVM) algorithm can be used in conjunction with deep learning as part of a semi-supervised learning approach.</span></p><hr><h4 id="Q11-How-to-do-custom-dataset-in-tensorflow" data-id="Q11-How-to-do-custom-dataset-in-tensorflow"><a class="anchor hidden-xs" href="#Q11-How-to-do-custom-dataset-in-tensorflow" title="Q11-How-to-do-custom-dataset-in-tensorflow"><span class="octicon octicon-link"></span></a><span>Q11. How to do custom dataset in tensorflow?</span></h4><p><span>A11:</span><br>
+<span>To create a custom dataset in TensorFlow, you can use the </span><code>tf.data.Dataset API</code><span>. This API provides a flexible and efficient way to work with your own data, whether it’s stored in memory or on disk.</span></p><p><span>Here are the basic steps to create a custom dataset in TensorFlow:</span></p><ol>
+<li><span>Load your data into memory or read it from disk using a suitable method for your data format (e.g., NumPy, Pillow, CSV, TFRecord, etc.).</span></li>
+<li><span>Create one or more TensorFlow tensors to hold your data, with the first dimension representing the number of samples in your dataset.</span></li>
+<li><span>Use the tf.data.Dataset.from_tensor_slices() method to create a dataset from your tensor(s), where each element of the dataset corresponds to a single sample.</span></li>
+<li><span>Apply any desired transformations to your dataset using the available methods in the tf.data.Dataset API. These may include shuffling, batching, repeating, mapping, filtering, etc.</span></li>
+<li><span>Finally, pass your dataset to a TensorFlow model for training or evaluation</span></li>
+</ol><p><span>Here’s an example of how to create a custom dataset from a NumPy array:</span></p><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span></div><div class="code"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-comment"># Load your data into memory as a NumPy array</span>
+data = np.random.randn(<span class="hljs-number">100</span>, <span class="hljs-number">28</span>, <span class="hljs-number">28</span>, <span class="hljs-number">3</span>)
+labels = np.random.randint(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">100</span>)
+
+<span class="hljs-comment"># Create TensorFlow tensors from your data</span>
+data_tensor = tf.constant(data, dtype=tf.float32)
+labels_tensor = tf.constant(labels, dtype=tf.int32)
+
+<span class="hljs-comment"># Create a dataset from your tensors</span>
+dataset = tf.data.Dataset.from_tensor_slices((data_tensor, labels_tensor))
+
+<span class="hljs-comment"># Apply transformations to your dataset</span>
+dataset = dataset.shuffle(<span class="hljs-number">100</span>).batch(<span class="hljs-number">32</span>).repeat()
+
+<span class="hljs-comment"># Pass your dataset to a TensorFlow model for training or evaluation</span>
+model.fit(dataset, epochs=<span class="hljs-number">10</span>)
+</div></div></code></pre><p><span>In this example, we create a dataset from a NumPy array of 100 images, each with size 28x28x3, and corresponding labels. We then shuffle the dataset, batch it into groups of 32 samples, and repeat it indefinitely for 10 epochs of training. Finally, we pass the dataset to a TensorFlow model using the </span><code>fit()</code><span> method.</span></p><hr><h4 id="Q12-how-to-detect-credit-card-fraud-using-deep-learning" data-id="Q12-how-to-detect-credit-card-fraud-using-deep-learning"><a class="anchor hidden-xs" href="#Q12-how-to-detect-credit-card-fraud-using-deep-learning" title="Q12-how-to-detect-credit-card-fraud-using-deep-learning"><span class="octicon octicon-link"></span></a><span>Q12. how to detect credit card fraud using deep learning?</span></h4><p><span>A12:</span><br>
+<span>Credit card fraud detection is a common application of deep learning. Here’s a high-level overview of how deep learning can be used to detect credit card fraud:</span></p><ol>
+<li><span>Data Preparation: The first step is to gather a large dataset of credit card transactions, some of which are known to be fraudulent. This dataset will be used to train the deep learning model. The data should be pre-processed to remove any irrelevant or redundant information and to ensure that the data is in a format that can be ingested by the deep learning model.</span></li>
+<li><span>Model Training: The next step is to train a deep learning model to classify transactions as either fraudulent or legitimate. A common approach is to use a convolutional neural network (CNN) or a recurrent neural network (RNN) to process the transaction data and identify patterns that are indicative of fraud. The model is trained on a subset of the data, using a combination of supervised and unsupervised learning techniques.</span></li>
+<li><span>Model Testing and Evaluation: After the model is trained, it needs to be tested and evaluated on a separate dataset that was not used during the training process. This step helps to determine the accuracy and effectiveness of the model.</span></li>
+<li><span>Deployment: Once the model has been tested and validated, it can be deployed to a production environment where it can be used to automatically detect fraudulent transactions in real-time. The model can be integrated into the credit card company’s fraud detection system and used to flag suspicious transactions for further investigation.</span></li>
+</ol><p><span>Overall, deep learning can be a powerful tool for detecting credit card fraud, as it is capable of identifying complex patterns in large datasets that may be difficult to detect using traditional fraud detection methods. However, it is important to note that deep learning is not a magic bullet and requires careful data preparation, model selection, and testing to ensure that it is effective and accurate.</span></p><hr><h4 id="Q14-How-do-i-start-a-deep-learning-project-" data-id="Q14-How-do-i-start-a-deep-learning-project-"><a class="anchor hidden-xs" href="#Q14-How-do-i-start-a-deep-learning-project-" title="Q14-How-do-i-start-a-deep-learning-project-"><span class="octicon octicon-link"></span></a><span>Q14. How do i start a deep learning project ?</span></h4><p><span>A14:</span><br>
+<span>tarting a deep learning project can be a challenging task, but here are some steps you can take to get started:</span></p><ol>
+<li><span>Define the problem: The first step is to clearly define the problem you want to solve. This will help you focus your efforts and ensure that you are working on a project that is meaningful and relevant to your interests.</span></li>
+<li><span>Gather data: Deep learning models require large amounts of data to be trained effectively. You will need to gather a dataset that is relevant to the problem you want to solve. This may involve collecting data yourself, using public datasets, or purchasing data from a third-party provider.</span></li>
+<li><span>Preprocess the data: Once you have gathered the data, you will need to preprocess it to ensure that it is in a format that can be ingested by the deep learning model. This may involve tasks such as data cleaning, normalization, and feature extraction.</span></li>
+<li><span>Select a deep learning framework: There are several deep learning frameworks available, including TensorFlow, PyTorch, and Keras. You will need to select a framework that is suitable for the problem you want to solve and the skills you have.</span></li>
+<li><span>Design and train the model: The next step is to design a deep learning model that is capable of solving the problem you defined earlier. This may involve selecting an appropriate architecture, choosing hyperparameters, and fine-tuning the model to achieve the desired level of accuracy.</span></li>
+<li><span>Test and evaluate the model: After the model is trained, it needs to be tested and evaluated to ensure that it is accurate and effective. This may involve splitting the dataset into a training set and a validation set, testing the model on the validation set, and adjusting the model as necessary.</span></li>
+<li><span>Deploy the model: Once the model has been tested and validated, it can be deployed to a production environment where it can be used to solve the problem you defined earlier. This may involve integrating the model into an application or using it to automate a specific task.</span></li>
+</ol><p><span>Overall, starting a deep learning project requires careful planning and a good understanding of the problem you want to solve. By following these steps, you can increase your chances of success and achieve your goals.</span></p><hr><h4 id="Q15-What-is-the-self-learning-roadmap-to-data-scientist" data-id="Q15-What-is-the-self-learning-roadmap-to-data-scientist"><a class="anchor hidden-xs" href="#Q15-What-is-the-self-learning-roadmap-to-data-scientist" title="Q15-What-is-the-self-learning-roadmap-to-data-scientist"><span class="octicon octicon-link"></span></a><span>Q15. What is the self learning roadmap to data scientist?</span></h4><p><span>A15:</span><br>
+<span>Here is a self-learning roadmap to become a data scientist:</span></p><ol>
+<li><span>Learn the basics of programming: The first step is to learn a programming language such as Python or R. You can start by learning the basics of programming such as variables, data types, loops, and functions.</span></li>
+<li><span>Learn statistics and mathematics: Data science is heavily based on statistics and mathematics. You need to learn topics such as probability, linear algebra, and calculus. This will help you understand the fundamentals of data science and machine learning.</span></li>
+<li><span>Learn data wrangling: Data wrangling involves cleaning and transforming data into a format that can be analyzed. You need to learn how to handle missing values, outliers, and how to perform feature engineering.</span></li>
+<li><span>Learn data visualization: Data visualization is a critical aspect of data science. You need to learn how to create effective data visualizations using tools such as Matplotlib and Seaborn.</span></li>
+<li><span>Learn machine learning: Machine learning is the core of data science. You need to learn the different types of machine learning such as supervised learning, unsupervised learning, and deep learning. You also need to learn how to evaluate models and choose the best model for a given problem.</span></li>
+<li><span>Practice on real-world projects: Once you have learned the basics, you need to start working on real-world projects. You can participate in online competitions such as Kaggle or work on your own projects. This will help you gain hands-on experience and build your portfolio.</span></li>
+<li><span>Learn big data technologies: As a data scientist, you will work with large datasets. You need to learn big data technologies such as Hadoop, Spark, and Hive. This will help you scale your data science projects.</span></li>
+<li><span>Keep learning and stay up-to-date: Data science is a rapidly evolving field. You need to keep learning and stay up-to-date with the latest technologies and techniques. You can do this by reading blogs, attending conferences, and taking online courses.</span></li>
+</ol><p><span>Overall, becoming a data scientist requires continuous learning and practice. By following this self-learning roadmap, you can acquire the skills and knowledge needed to succeed as a data scientist.</span></p><hr><h4 id="Q16-How-to-write-my-own-keras-training-method" data-id="Q16-How-to-write-my-own-keras-training-method"><a class="anchor hidden-xs" href="#Q16-How-to-write-my-own-keras-training-method" title="Q16-How-to-write-my-own-keras-training-method"><span class="octicon octicon-link"></span></a><span>Q16. How to write my own keras training method?</span></h4><p><span>A16:</span></p><p><span>To write your own Keras training method, you can create a custom training loop using the Keras Model class. Here are the basic steps:</span></p><ol>
+<li><span>Define your custom training loop: In Keras, you can define a custom training loop by creating a train_step method that takes in a batch of data and returns the loss. You can also define a custom test_step method for evaluation.</span></li>
+<li><span>Define your model: Define your model using the Keras Model class. The Model class allows you to define your network architecture and specify the input and output layers.</span></li>
+<li><span>Define your optimizer: Choose an optimizer from the Keras optimizers module. This optimizer will be used to update the model weights during training.</span></li>
+<li><span>Compile your model: Compile your model by specifying the loss function and the optimizer. You can also specify additional metrics to track during training and evaluation.</span></li>
+<li><span>Train your model: Call the fit method on your model, passing in the training and validation datasets. You can also specify the batch size, number of epochs, and other training parameters.</span></li>
+</ol><p><span>Here’s an example of a custom training loop in Keras:</span></p><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span></div><div class="code"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">from</span> tensorflow <span class="hljs-keyword">import</span> keras
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MyModel</span>(keras.Model):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">super</span>(MyModel, self).__init__()
+        <span class="hljs-comment"># Define your layers here</span>
+        
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">train_step</span>(<span class="hljs-params">self, data</span>):
+        <span class="hljs-comment"># Get the input and target data</span>
+        x, y = data
+
+        <span class="hljs-comment"># Forward pass through the network</span>
+        <span class="hljs-keyword">with</span> tf.GradientTape() <span class="hljs-keyword">as</span> tape:
+            predictions = self(x, training=<span class="hljs-literal">True</span>)
+            loss = self.compiled_loss(y, predictions)
+        
+        <span class="hljs-comment"># Compute gradients and update weights</span>
+        gradients = tape.gradient(loss, self.trainable_variables)
+        self.optimizer.apply_gradients(<span class="hljs-built_in">zip</span>(gradients, self.trainable_variables))
+
+        <span class="hljs-comment"># Update the metrics</span>
+        self.compiled_metrics.update_state(y, predictions)
+
+        <span class="hljs-comment"># Return the loss value for logging</span>
+        <span class="hljs-keyword">return</span> {metric.name: metric.result() <span class="hljs-keyword">for</span> metric <span class="hljs-keyword">in</span> self.metrics}
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">test_step</span>(<span class="hljs-params">self, data</span>):
+        <span class="hljs-comment"># Get the input and target data</span>
+        x, y = data
+
+        <span class="hljs-comment"># Forward pass through the network</span>
+        predictions = self(x, training=<span class="hljs-literal">False</span>)
+        loss = self.compiled_loss(y, predictions)
+
+        <span class="hljs-comment"># Update the metrics</span>
+        self.compiled_metrics.update_state(y, predictions)
+
+        <span class="hljs-comment"># Return the loss value for logging</span>
+        <span class="hljs-keyword">return</span> {metric.name: metric.result() <span class="hljs-keyword">for</span> metric <span class="hljs-keyword">in</span> self.metrics}
+
+<span class="hljs-comment"># Create your custom model</span>
+model = MyModel()
+
+<span class="hljs-comment"># Define your optimizer</span>
+optimizer = keras.optimizers.Adam(learning_rate=<span class="hljs-number">0.001</span>)
+
+<span class="hljs-comment"># Compile your model</span>
+model.<span class="hljs-built_in">compile</span>(optimizer=optimizer, loss=<span class="hljs-string">"mse"</span>, metrics=[<span class="hljs-string">"mae"</span>])
+
+<span class="hljs-comment"># Train your model</span>
+model.fit(train_dataset, epochs=<span class="hljs-number">10</span>, validation_data=val_dataset)
+</div></div></code></pre><p><span>In this example, </span><code>MyModel</code><span> is a custom </span><code>Model</code><span> class that defines the </span><code>train_step</code><span> and </span><code>test_step</code><span> methods. The </span><code>train_step</code><span> method computes the forward pass, computes the loss, computes the gradients, updates the weights, and updates the metrics. The </span><code>test_step</code><span> method computes the forward pass, computes the loss, and updates the metrics. The model is compiled with an optimizer, a loss function, and metrics, and then trained using the </span><code>fit()</code><span> method.</span></p><hr><h4 id="Q17-How-to-learn-GAN" data-id="Q17-How-to-learn-GAN"><a class="anchor hidden-xs" href="#Q17-How-to-learn-GAN" title="Q17-How-to-learn-GAN"><span class="octicon octicon-link"></span></a><span>Q17. How to learn GAN?</span></h4><p><span>A17:</span><br>
+<span>Here are some steps you can follow to learn about GANs (Generative Adversarial Networks):</span></p><ol>
+<li><span>Learn the basics of deep learning: To understand GANs, you should have a good foundation in deep learning. You should be familiar with neural networks, backpropagation, and optimization algorithms. You can start with online courses or books on deep learning.</span></li>
+<li><span>Study the GAN architecture: You should learn about the GAN architecture, which consists of two neural networks: a generator and a discriminator. The generator tries to create fake data that looks like the real data, while the discriminator tries to distinguish between real and fake data.</span></li>
+<li><span>Study the loss function: The GAN loss function is composed of two parts: the generator loss and the discriminator loss. The generator loss measures how well the generator is fooling the discriminator, while the discriminator loss measures how well the discriminator can distinguish between real and fake data.</span></li>
+<li><span>Experiment with small datasets: Start with small datasets and experiment with different architectures and hyperparameters. This will help you to get a feel for how GANs work.</span></li>
+<li><span>Explore GAN applications: GANs are used for a variety of applications, such as image and text generation, data augmentation, and anomaly detection. Explore these applications and try to implement them in your own projects.</span></li>
+<li><span>Join online communities: Join online communities, such as Reddit or GitHub, to learn from other developers and get help when you encounter problems.</span></li>
+<li><span>Read research papers: To keep up with the latest developments in GANs, read research papers published in conferences and journals, such as NeurIPS and ICML.</span></li>
+<li><span>Practice and keep learning: Keep practicing and experimenting with GANs, and continue to learn about new techniques and architectures as they emerge.</span></li>
+</ol><hr><h4 id="Q18-Example-of-a-GAN-model" data-id="Q18-Example-of-a-GAN-model"><a class="anchor hidden-xs" href="#Q18-Example-of-a-GAN-model" title="Q18-Example-of-a-GAN-model"><span class="octicon octicon-link"></span></a><span>Q18. Example of a GAN model</span></h4><p><span>A18:</span></p><pre><code class="python hljs"><span class="hljs-comment"># Import required libraries</span>
+<span class="hljs-keyword">from</span> tensorflow.keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> tensorflow.keras.layers <span class="hljs-keyword">import</span> Dense, Reshape, Flatten
+<span class="hljs-keyword">from</span> tensorflow.keras.layers <span class="hljs-keyword">import</span> Conv2D, Conv2DTranspose
+<span class="hljs-keyword">from</span> tensorflow.keras.layers <span class="hljs-keyword">import</span> LeakyReLU
+<span class="hljs-keyword">from</span> tensorflow.keras.optimizers <span class="hljs-keyword">import</span> Adam
+
+<span class="hljs-comment"># Define the generator model</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">build_generator</span>(<span class="hljs-params">latent_dim</span>):
+    model = Sequential()
+    model.add(Dense(<span class="hljs-number">7</span>*<span class="hljs-number">7</span>*<span class="hljs-number">256</span>, input_dim=latent_dim))
+    model.add(LeakyReLU(alpha=<span class="hljs-number">0.2</span>))
+    model.add(Reshape((<span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">256</span>)))
+    model.add(Conv2DTranspose(<span class="hljs-number">128</span>, (<span class="hljs-number">4</span>,<span class="hljs-number">4</span>), strides=(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), padding=<span class="hljs-string">'same'</span>))
+    model.add(LeakyReLU(alpha=<span class="hljs-number">0.2</span>))
+    model.add(Conv2DTranspose(<span class="hljs-number">1</span>, (<span class="hljs-number">7</span>,<span class="hljs-number">7</span>), activation=<span class="hljs-string">'sigmoid'</span>, padding=<span class="hljs-string">'same'</span>))
+    <span class="hljs-keyword">return</span> model
+
+<span class="hljs-comment"># Define the discriminator model</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">build_discriminator</span>():
+    model = Sequential()
+    model.add(Conv2D(<span class="hljs-number">64</span>, (<span class="hljs-number">3</span>,<span class="hljs-number">3</span>), strides=(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), padding=<span class="hljs-string">'same'</span>, input_shape=(<span class="hljs-number">28</span>, <span class="hljs-number">28</span>, <span class="hljs-number">1</span>)))
+    model.add(LeakyReLU(alpha=<span class="hljs-number">0.2</span>))
+    model.add(Conv2D(<span class="hljs-number">128</span>, (<span class="hljs-number">3</span>,<span class="hljs-number">3</span>), strides=(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), padding=<span class="hljs-string">'same'</span>))
+    model.add(LeakyReLU(alpha=<span class="hljs-number">0.2</span>))
+    model.add(Flatten())
+    model.add(Dense(<span class="hljs-number">1</span>, activation=<span class="hljs-string">'sigmoid'</span>))
+    <span class="hljs-keyword">return</span> model
+
+<span class="hljs-comment"># Define the GAN model</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">build_gan</span>(<span class="hljs-params">generator, discriminator</span>):
+    discriminator.trainable = <span class="hljs-literal">False</span>
+    model = Sequential()
+    model.add(generator)
+    model.add(discriminator)
+    optimizer = Adam(lr=<span class="hljs-number">0.0002</span>, beta_1=<span class="hljs-number">0.5</span>)
+    model.<span class="hljs-built_in">compile</span>(loss=<span class="hljs-string">'binary_crossentropy'</span>, optimizer=optimizer)
+    <span class="hljs-keyword">return</span> model
+
+<span class="hljs-comment"># Define the hyperparameters</span>
+latent_dim = <span class="hljs-number">100</span>
+num_epochs = <span class="hljs-number">100</span>
+batch_size = <span class="hljs-number">128</span>
+
+<span class="hljs-comment"># Load the MNIST dataset</span>
+(X_train, _), (_, _) = tf.keras.datasets.mnist.load_data()
+X_train = X_train.reshape(X_train.shape[<span class="hljs-number">0</span>], <span class="hljs-number">28</span>, <span class="hljs-number">28</span>, <span class="hljs-number">1</span>)
+X_train = X_train.astype(<span class="hljs-string">'float32'</span>)
+X_train = X_train / <span class="hljs-number">255.0</span>
+
+<span class="hljs-comment"># Build the generator and discriminator models</span>
+generator = build_generator(latent_dim)
+discriminator = build_discriminator()
+
+<span class="hljs-comment"># Build the GAN model</span>
+gan = build_gan(generator, discriminator)
+
+<span class="hljs-comment"># Train the GAN model</span>
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_epochs):
+    <span class="hljs-keyword">for</span> batch <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(X_train.shape[<span class="hljs-number">0</span>] // batch_size):
+        <span class="hljs-comment"># Train the discriminator on real and fake data</span>
+        real_data = X_train[batch*batch_size:(batch+<span class="hljs-number">1</span>)*batch_size]
+        fake_data = generator.predict(np.random.normal(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, (batch_size, latent_dim)))
+        discriminator_loss_real = discriminator.train_on_batch(real_data, np.ones((batch_size, <span class="hljs-number">1</span>)))
+        discriminator_loss_fake = discriminator.train_on_batch(fake_data, np.zeros((batch_size, <span class="hljs-number">1</span>)))
+        discriminator_loss = <span class="hljs-number">0.5</span> * np.add(discriminator_loss_real, discriminator_loss_fake)
+        
+        <span class="hljs-comment"># Train the generator to fool the discriminator</span>
+        generator_loss = gan.train_on_batch(np.random.normal(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, (batch_size, latent_dim)), np.ones((batch_size, <span class="hljs-number">1</span>)))
+    
+    <span class="hljs-comment"># Print the progress of the training</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"Epoch <span class="hljs-subst">{epoch+<span class="hljs-number">1</span>}</span>, Discriminator Loss: <span class="hljs-subst">{discriminator_loss}</span>, Generator Loss: <span class="hljs-subst">{generator_loss}</span>"</span>)
+
+</code></pre><hr><h4 id="Q19-What-is-latent_dim-in-deep-learning" data-id="Q19-What-is-latent_dim-in-deep-learning"><a class="anchor hidden-xs" href="#Q19-What-is-latent_dim-in-deep-learning" title="Q19-What-is-latent_dim-in-deep-learning"><span class="octicon octicon-link"></span></a><span>Q19. What is latent_dim in deep learning?</span></h4><p><span>A19:</span><br>
+<span>In deep learning, the term “latent_dim” refers to the number of dimensions in the latent space of a model. The latent space is a lower-dimensional space where the model maps the high-dimensional input data. It represents the essential features of the input data in a compressed form.</span></p><p><span>For example, in a variational autoencoder, the encoder network maps the input data to the latent space, which is then decoded by the decoder network to generate the output data. The size of the latent space is typically a hyperparameter that needs to be chosen by the user. A larger latent space may allow the model to capture more information about the input data but may also require more training data and longer training times.</span></p><hr><h4 id="Q20-What-are-the-topics-to-learn-in-order-in-machine-learning" data-id="Q20-What-are-the-topics-to-learn-in-order-in-machine-learning"><a class="anchor hidden-xs" href="#Q20-What-are-the-topics-to-learn-in-order-in-machine-learning" title="Q20-What-are-the-topics-to-learn-in-order-in-machine-learning"><span class="octicon octicon-link"></span></a><span>Q20. What are the topics to learn in order in machine learning?</span></h4><p><span>A20:</span><br>
+<span>Here is a general sequence of topics that you can learn in order to develop a solid foundation in machine learning:</span></p><ol>
+<li><span>Mathematics: Linear algebra, calculus, and probability theory.</span></li>
+<li><span>Statistics: Statistical inference, hypothesis testing, and regression analysis.</span></li>
+<li><span>Programming: Python or R, and libraries such as NumPy, Pandas, and Matplotlib.</span></li>
+<li><span>Machine learning concepts: Supervised learning, unsupervised learning, reinforcement learning, overfitting, regularization, model selection, and evaluation metrics.</span></li>
+<li><span>Supervised learning algorithms: Linear regression, logistic regression, decision trees, random forests, support vector machines (SVM), and k-nearest neighbors (k-NN).</span></li>
+<li><span>Unsupervised learning algorithms: K-means clustering, hierarchical clustering, principal component analysis (PCA), and t-SNE.</span></li>
+<li><span>Deep learning: Neural networks, convolutional neural networks (CNN), recurrent neural networks (RNN), and generative adversarial networks (GAN).</span></li>
+<li><span>Natural language processing (NLP): Text preprocessing, tokenization, and feature extraction; bag-of-words and term frequency-inverse document frequency (TF-IDF) vectorization; sentiment analysis, topic modeling, and named entity recognition.</span></li>
+<li><span>Reinforcement learning: Markov decision processes, value functions, policy iteration, and Q-learning.</span></li>
+</ol><p><span>Remember that this is a general sequence, and you may choose to focus on specific topics depending on your interests and career goals. Also, keep in mind that machine learning is a constantly evolving field, so it’s important to stay up to date with the latest research and developments.</span></p><hr><h4 id="Q21-How-is-deep-learning-used-in-anamoly-detection" data-id="Q21-How-is-deep-learning-used-in-anamoly-detection"><a class="anchor hidden-xs" href="#Q21-How-is-deep-learning-used-in-anamoly-detection" title="Q21-How-is-deep-learning-used-in-anamoly-detection"><span class="octicon octicon-link"></span></a><span>Q21. How is deep learning used in anamoly detection?</span></h4><p><span>A21:</span><br>
+<span>Deep learning is a powerful tool for anomaly detection because it can learn complex patterns and features in data that may be difficult or impossible to detect using traditional statistical methods. Here are some ways that deep learning is used in anomaly detection:</span></p><ol>
+<li><span>Autoencoders: Autoencoders are a type of neural network that can be used for unsupervised anomaly detection. They work by compressing the input data into a lower-dimensional representation (the “latent space”) and then reconstructing the original data from this representation. Anomalies can be detected by measuring the difference between the input data and the reconstructed data.</span></li>
+<li><span>Recurrent neural networks (RNNs): RNNs are neural networks that can process sequences of data, such as time series or sensor data. They can be used for anomaly detection by training the network on a normal sequence of data and then detecting anomalies when the network encounters a sequence that is significantly different from the normal sequence.</span></li>
+<li><span>Convolutional neural networks (CNNs): CNNs are neural networks that can be used for image or signal processing. They can be used for anomaly detection by training the network on a set of normal images or signals and then detecting anomalies when the network encounters an image or signal that is significantly different from the normal ones.</span></li>
+<li><span>Generative adversarial networks (GANs): GANs are a type of neural network that can generate realistic data based on a given set of training data. They can be used for anomaly detection by training the generator network on normal data and then detecting anomalies by measuring the difference between the generated data and the real data.</span></li>
+</ol><p><span>In all of these approaches, the key is to train the deep learning model on a representative set of normal data and then use the model to detect anomalies when it encounters data that is significantly different from the normal data. The success of the approach depends on having a sufficient amount of high-quality data and choosing the appropriate deep learning model and algorithm for the specific application.</span></p><hr><h4 id="Q22-How-to-build-data-pipeline-in-tensorflow" data-id="Q22-How-to-build-data-pipeline-in-tensorflow"><a class="anchor hidden-xs" href="#Q22-How-to-build-data-pipeline-in-tensorflow" title="Q22-How-to-build-data-pipeline-in-tensorflow"><span class="octicon octicon-link"></span></a><span>Q22. How to build data pipeline in tensorflow?</span></h4><p><span>A22:</span><br>
+<span>Building a data pipeline in TensorFlow involves a few key steps:</span></p><ol>
+<li><span>Loading and preprocessing the data: First, you need to load your data from your data source (such as a file or a database) and preprocess it so that it can be used in your TensorFlow model. This might involve tasks like cleaning the data, transforming it into a format that can be used in TensorFlow (such as a NumPy array), and splitting it into training, validation, and testing sets.</span></li>
+<li><span>Creating a data input pipeline: Once you have preprocessed your data, you need to create a data input pipeline that will feed your data to your TensorFlow model. The input pipeline should be efficient and scalable, and should be able to handle large datasets.</span></li>
+<li><span>Defining the TensorFlow model: Next, you need to define your TensorFlow model using the appropriate APIs (such as the Keras API or the lower-level TensorFlow API). This involves specifying the architecture of your model (such as the number and type of layers) and the loss function and metrics that you will use to train and evaluate your model.</span></li>
+<li><span>Training the TensorFlow model: Once your model is defined, you need to train it using your preprocessed data and your data input pipeline. This involves specifying the optimizer and the learning rate, and running the training loop for a specified number of epochs or until the model reaches a certain level of performance.</span></li>
+<li><span>Evaluating the TensorFlow model: After the model is trained, you need to evaluate its performance on a separate validation or test dataset. This involves running the model on the test data and calculating the loss and metrics that you specified earlier.</span></li>
+<li><span>Deploying the TensorFlow model: Once your model is trained and evaluated, you can deploy it to production by serving it as a web service, embedding it in an application, or running it on a device.</span></li>
+</ol><p><span>There are many libraries and tools available in TensorFlow that can help you build a data pipeline, including the Dataset API, the Estimator API, and the Keras API. The specific implementation will depend on the type of data that you are working with, the size of your dataset, and the nature of your TensorFlow model.</span></p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li><a href="#Machine-Learning-QampA" title="Machine Learning Q&amp;A">Machine Learning Q&amp;A</a><ul class="nav">
+<li><a href="#Q1-how-much-python-do-i-need-to-learn-to-do-data-science-" title="Q1. how much python do i need to learn to do data science ?">Q1. how much python do i need to learn to do data science ?</a></li>
+<li><a href="#Q2-what-can-variational-autoencoder-do-" title="Q2. what can variational autoencoder do ?">Q2. what can variational autoencoder do ?</a></li>
+<li><a href="#Q3-how-to-do-anomaly-detection-with-variational-autoencoder" title="Q3. how to do anomaly detection with variational autoencoder?">Q3. how to do anomaly detection with variational autoencoder?</a></li>
+<li><a href="#Q4-what-is-latent-space-in-deep-learning" title="Q4: what is latent space in deep learning?">Q4: what is latent space in deep learning?</a></li>
+<li><a href="#Q5-what-is-WGAN" title="Q5. what is WGAN?">Q5. what is WGAN?</a></li>
+<li><a href="#Q6-what-are-Wasserstein-distance-Jensen-Shannon-divergence-and-Kullback-Leibler-divergence" title="Q6. what are Wasserstein distance, Jensen-Shannon divergence, and Kullback-Leibler divergence?">Q6. what are Wasserstein distance, Jensen-Shannon divergence, and Kullback-Leibler divergence?</a></li>
+<li><a href="#Q7-how-is-Wasserstein-distance-used-in-WGAN-" title="Q7. how is Wasserstein distance used in WGAN ?">Q7. how is Wasserstein distance used in WGAN ?</a></li>
+<li><a href="#Q8-what-does-Varational-autoencoder-do-" title="Q8. what does Varational autoencoder do ?">Q8. what does Varational autoencoder do ?</a></li>
+<li><a href="#Q9-what-is-latent-vector-in-deep-learning" title="Q9. what is latent vector in deep learning?">Q9. what is latent vector in deep learning?</a></li>
+<li><a href="#Q10-can-i-use-scikit-learn-for-deep-learning-or-do-i-have-to-use-pytorch-and-tensorflow-" title="Q10. can i use scikit learn for deep learning? or do i have to use pytorch and tensorflow ?">Q10. can i use scikit learn for deep learning? or do i have to use pytorch and tensorflow ?</a></li>
+<li><a href="#Q11-How-to-do-custom-dataset-in-tensorflow" title="Q11. How to do custom dataset in tensorflow?">Q11. How to do custom dataset in tensorflow?</a></li>
+<li><a href="#Q12-how-to-detect-credit-card-fraud-using-deep-learning" title="Q12. how to detect credit card fraud using deep learning?">Q12. how to detect credit card fraud using deep learning?</a></li>
+<li><a href="#Q14-How-do-i-start-a-deep-learning-project-" title="Q14. How do i start a deep learning project ?">Q14. How do i start a deep learning project ?</a></li>
+<li><a href="#Q15-What-is-the-self-learning-roadmap-to-data-scientist" title="Q15. What is the self learning roadmap to data scientist?">Q15. What is the self learning roadmap to data scientist?</a></li>
+<li><a href="#Q16-How-to-write-my-own-keras-training-method" title="Q16. How to write my own keras training method?">Q16. How to write my own keras training method?</a></li>
+<li><a href="#Q17-How-to-learn-GAN" title="Q17. How to learn GAN?">Q17. How to learn GAN?</a></li>
+<li><a href="#Q18-Example-of-a-GAN-model" title="Q18. Example of a GAN model">Q18. Example of a GAN model</a></li>
+<li><a href="#Q19-What-is-latent_dim-in-deep-learning" title="Q19. What is latent_dim in deep learning?">Q19. What is latent_dim in deep learning?</a></li>
+<li><a href="#Q20-What-are-the-topics-to-learn-in-order-in-machine-learning" title="Q20. What are the topics to learn in order in machine learning?">Q20. What are the topics to learn in order in machine learning?</a></li>
+<li><a href="#Q21-How-is-deep-learning-used-in-anamoly-detection" title="Q21. How is deep learning used in anamoly detection?">Q21. How is deep learning used in anamoly detection?</a></li>
+<li><a href="#Q22-How-to-build-data-pipeline-in-tensorflow" title="Q22. How to build data pipeline in tensorflow?">Q22. How to build data pipeline in tensorflow?</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li><a href="#Machine-Learning-QampA" title="Machine Learning Q&amp;A">Machine Learning Q&amp;A</a><ul class="nav">
+<li><a href="#Q1-how-much-python-do-i-need-to-learn-to-do-data-science-" title="Q1. how much python do i need to learn to do data science ?">Q1. how much python do i need to learn to do data science ?</a></li>
+<li><a href="#Q2-what-can-variational-autoencoder-do-" title="Q2. what can variational autoencoder do ?">Q2. what can variational autoencoder do ?</a></li>
+<li><a href="#Q3-how-to-do-anomaly-detection-with-variational-autoencoder" title="Q3. how to do anomaly detection with variational autoencoder?">Q3. how to do anomaly detection with variational autoencoder?</a></li>
+<li><a href="#Q4-what-is-latent-space-in-deep-learning" title="Q4: what is latent space in deep learning?">Q4: what is latent space in deep learning?</a></li>
+<li><a href="#Q5-what-is-WGAN" title="Q5. what is WGAN?">Q5. what is WGAN?</a></li>
+<li><a href="#Q6-what-are-Wasserstein-distance-Jensen-Shannon-divergence-and-Kullback-Leibler-divergence" title="Q6. what are Wasserstein distance, Jensen-Shannon divergence, and Kullback-Leibler divergence?">Q6. what are Wasserstein distance, Jensen-Shannon divergence, and Kullback-Leibler divergence?</a></li>
+<li><a href="#Q7-how-is-Wasserstein-distance-used-in-WGAN-" title="Q7. how is Wasserstein distance used in WGAN ?">Q7. how is Wasserstein distance used in WGAN ?</a></li>
+<li><a href="#Q8-what-does-Varational-autoencoder-do-" title="Q8. what does Varational autoencoder do ?">Q8. what does Varational autoencoder do ?</a></li>
+<li><a href="#Q9-what-is-latent-vector-in-deep-learning" title="Q9. what is latent vector in deep learning?">Q9. what is latent vector in deep learning?</a></li>
+<li><a href="#Q10-can-i-use-scikit-learn-for-deep-learning-or-do-i-have-to-use-pytorch-and-tensorflow-" title="Q10. can i use scikit learn for deep learning? or do i have to use pytorch and tensorflow ?">Q10. can i use scikit learn for deep learning? or do i have to use pytorch and tensorflow ?</a></li>
+<li><a href="#Q11-How-to-do-custom-dataset-in-tensorflow" title="Q11. How to do custom dataset in tensorflow?">Q11. How to do custom dataset in tensorflow?</a></li>
+<li><a href="#Q12-how-to-detect-credit-card-fraud-using-deep-learning" title="Q12. how to detect credit card fraud using deep learning?">Q12. how to detect credit card fraud using deep learning?</a></li>
+<li><a href="#Q14-How-do-i-start-a-deep-learning-project-" title="Q14. How do i start a deep learning project ?">Q14. How do i start a deep learning project ?</a></li>
+<li><a href="#Q15-What-is-the-self-learning-roadmap-to-data-scientist" title="Q15. What is the self learning roadmap to data scientist?">Q15. What is the self learning roadmap to data scientist?</a></li>
+<li><a href="#Q16-How-to-write-my-own-keras-training-method" title="Q16. How to write my own keras training method?">Q16. How to write my own keras training method?</a></li>
+<li><a href="#Q17-How-to-learn-GAN" title="Q17. How to learn GAN?">Q17. How to learn GAN?</a></li>
+<li><a href="#Q18-Example-of-a-GAN-model" title="Q18. Example of a GAN model">Q18. Example of a GAN model</a></li>
+<li><a href="#Q19-What-is-latent_dim-in-deep-learning" title="Q19. What is latent_dim in deep learning?">Q19. What is latent_dim in deep learning?</a></li>
+<li><a href="#Q20-What-are-the-topics-to-learn-in-order-in-machine-learning" title="Q20. What are the topics to learn in order in machine learning?">Q20. What are the topics to learn in order in machine learning?</a></li>
+<li><a href="#Q21-How-is-deep-learning-used-in-anamoly-detection" title="Q21. How is deep learning used in anamoly detection?">Q21. How is deep learning used in anamoly detection?</a></li>
+<li><a href="#Q22-How-to-build-data-pipeline-in-tensorflow" title="Q22. How to build data pipeline in tensorflow?">Q22. How to build data pipeline in tensorflow?</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
